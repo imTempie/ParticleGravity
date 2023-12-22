@@ -127,6 +127,41 @@ document.getElementById('removePlanets').addEventListener('click', function () {
   // Clear the array
   planets = [];
 });
+Matter.Events.on(engine, 'afterUpdate', function () {
+  console.log('afterUpdate event fired');
+
+  for (var i = 0; i < planets.length; i++) {
+    var planet1 = planets[i];
+
+    for (var j = i + 1; j < planets.length; j++) {
+      var planet2 = planets[j];
+
+      // Calculate the vector from planet1 to planet2
+      var dx = planet2.position.x - planet1.position.x;
+      var dy = planet2.position.y - planet1.position.y;
+      var distanceSq = dx * dx + dy * dy;
+
+      // Normalize the vector
+      var magnitude = Math.sqrt(distanceSq);
+      dx /= magnitude;
+      dy /= magnitude;
+
+      // Calculate the gravitational force
+      var G = planet1.gravity; // Use the planet's gravity value
+      var forceMagnitude =
+        (G * planet1.mass * planet2.mass) / (distanceSq + 0.01);
+      console.log('Applying force:', forceMagnitude * dx, forceMagnitude * dy); // Log the force being applied
+      Matter.Body.applyForce(planet1, planet1.position, {
+        x: forceMagnitude * dx,
+        y: forceMagnitude * dy,
+      });
+      Matter.Body.applyForce(planet2, planet2.position, {
+        x: -forceMagnitude * dx,
+        y: -forceMagnitude * dy,
+      });
+    }
+  }
+});
 
 Matter.Events.on(engine, 'afterUpdate', function () {
   console.log('afterUpdate event fired');
