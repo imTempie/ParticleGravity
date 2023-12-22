@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Matter.js Project</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <h1>Tempie's MatterJs Simulation</h1>
+    <div id="options">
+      <div id="particles">
+        <h2>Particles</h2>
+        <input id="particleCount" type="number" placeholder="Amount" />
+        <button id="addParticles">Add Particles</button>
+        <button id="removeParticles">Remove Particles</button>
+      </div>
+
+      <div id="planets">
+        <h2>Planets</h2>
+        <input id="planetSize" type="number" placeholder="Size" />
+        <input id="planetGravity" type="number" placeholder="Gravity" />
+        <button id="addPlanets">Add Planet</button>
+        <button id="removePlanets">Remove Planets</button>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.14.2/matter.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
