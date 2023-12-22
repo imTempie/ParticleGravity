@@ -28,7 +28,7 @@ canvas {
   width: 70%;
 }
 
-button {
+.positiveButton {
   padding: 10px 20px;
   font-size: 16px;
   border: none;
@@ -40,8 +40,24 @@ button {
   transition: background-color 0.3s ease;
 }
 
-button:hover {
+.positiveButton:hover {
   background-color: #0056b3;
+}
+
+.negativeButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: red;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.negativeButton:hover {
+  background-color: darkred;
 }
 
 #options {
@@ -58,23 +74,6 @@ button:hover {
   border: none;
   border-radius: 5px;
   width: 100px;
-}
-
-#options button {
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  background-color: #007bff;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  /* display: flex;
-  flex-direction: column; */
-}
-
-#options button:hover {
-  background-color: #0056b3;
 }
 
 #particles {

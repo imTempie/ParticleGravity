@@ -70,11 +70,11 @@ var particles = [];
 document.getElementById('addParticles').addEventListener('click', function () {
   var count = document.getElementById('particleCount').value;
   for (var i = 0; i < count; i++) {
-    var particle = Bodies.circle(
-      Math.random() * window.innerWidth,
-      Math.random() * window.innerHeight,
-      5
-    );
+    const x = 100 + Math.random() * (1920 - 200);
+    const y = 100 + Math.random() * (1080 - 200);
+
+    var particle = Bodies.circle(x, y, 5);
+    console.log(x, y);
     World.add(engine.world, particle);
     // Add the particle to the array
     particles.push(particle);

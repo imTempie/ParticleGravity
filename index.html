@@ -10,16 +10,20 @@
       <div id="particles">
         <h2>Particles</h2>
         <input id="particleCount" type="number" placeholder="Amount" />
-        <button id="addParticles">Add Particles</button>
-        <button id="removeParticles">Remove Particles</button>
+        <button id="addParticles" class="positiveButton">Add Particles</button>
+        <button id="removeParticles" class="negativeButton">
+          Remove Particles
+        </button>
       </div>
 
       <div id="planets">
         <h2>Planets</h2>
-        <input id="planetSize" type="number" placeholder="Size" />
+        <input id="planetSize" type="number" placeholder="Size (px)" />
         <input id="planetGravity" type="number" placeholder="Gravity" />
-        <button id="addPlanets">Add Planet</button>
-        <button id="removePlanets">Remove Planets</button>
+        <button id="addPlanets" class="positiveButton">Add Planet</button>
+        <button id="removePlanets" class="negativeButton">
+          Remove Planets
+        </button>
       </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.14.2/matter.min.js"></script>
