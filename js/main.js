@@ -74,7 +74,7 @@ document.getElementById('addParticles').addEventListener('click', function () {
     const y = 100 + Math.random() * (1080 - 200);
 
     var particle = Bodies.circle(x, y, 5);
-    console.log(x, y);
+    console.log('Particle spawned at: ' + x + ', ' + y);
     World.add(engine.world, particle);
     // Add the particle to the array
     particles.push(particle);
@@ -98,15 +98,16 @@ var planets = [];
 document.getElementById('addPlanets').addEventListener('click', function () {
   const size = document.getElementById('planetSize').value;
   const gravity = document.getElementById('planetGravity').value;
-  const x = 10 + Math.random() * (1900 - 2 * size) + size;
-  const y = 10 + Math.random() * (1060 - 2 * size) + size;
-  var planet = Bodies.circle(
-    Math.random() * window.innerWidth,
-    Math.random() * window.innerHeight,
-    size,
-    { gravity: gravity, isStatic: false, isPlanet: true }
-  );
+  const x = 100 + Math.random() * (1920 - 200);
+  const y = 100 + Math.random() * (1080 - 200);
+
+  var planet = Bodies.circle(x, y, size, {
+    gravity: gravity,
+    isStatic: false,
+    isPlanet: true,
+  });
   World.add(engine.world, planet);
+  console.log('Planet spawned at: ' + x + ', ' + y);
   // Add the planet to the array
   planets.push(planet);
 });
